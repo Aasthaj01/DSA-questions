@@ -2,8 +2,8 @@ def str_palindrome(string):
     if len(string) < 1: 
         return True
     else:
-        if s[0] == s[-1]: 
-            return str_palindrome(s[1:-1]) 
+        if string[0] == string[-1]: 
+            return str_palindrome(string[1:-1]) 
         else: 
             return False
             
