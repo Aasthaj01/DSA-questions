@@ -26,8 +26,8 @@ s = stack()
 num = int(input("How many numbers you want in the stack?"))
 entries = list(map(int, input("Enter the numbers: ").split()))
 # print(entries)
-for i in range(0, num):
-    s.push(entries[i])
+for item in entries:
+    s.push(int(item))
  
 print('The stack is:')
 s.display()
