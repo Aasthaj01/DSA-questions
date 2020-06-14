@@ -1,5 +1,5 @@
 # Stack problems
-# ------Reversing a stack ------ 
+# ----Creating a stack ------ 
 class stack():
     def __init__(self):
         self.items = []
