@@ -4,8 +4,7 @@
 def print_combinations(arr, n, k):
     data = [0] * k 
     current_combinations(arr, n, k, 0, data, 0) 
-    data.sort()
-  
+    
 def current_combinations(arr, n, k, index, data, i):
     if (index == k): 
         for j in range(k): 
