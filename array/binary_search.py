@@ -1,11 +1,12 @@
 # finds element in array by using binary search
+# indexing starts form 0
 
 def binarySearch(arr, low, high, key): 
   
     if (high < low): 
         return -1
     
-    mid = (low + high)/2
+    mid = (low + high)//2
   
     if (key == arr[int(mid)]): 
         return mid 
