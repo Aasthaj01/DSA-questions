@@ -1,4 +1,4 @@
-# Recursion - fabonacci
+# Recursion - fibonacci
 
 def fib(num):
     if num <= 1:
