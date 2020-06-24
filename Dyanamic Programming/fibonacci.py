@@ -8,7 +8,7 @@ def fib(num):
         
         
 # Top Down approach - fibonacci        
-def fib_topDown(num):
+def fib_topDown(num, arr):
     if num <= 1:
         arr[num] = num
         return arr[num]
@@ -17,12 +17,12 @@ def fib_topDown(num):
         return arr[num]
         
     else: 
-        arr[num] = fib(num-1) + fib(num-2)
+        arr[num] = fib_topDown(num-1, arr) + fib_topDown(num-2, arr)
     return (arr[num])    
     
-num = int(input("Enter the number till which you want to find fib:"))
+num = int(input("Enter the number till which you want to find fib sequence:"))
 arr = [-1]*50
 for i in range(0, num+1):
-    print(fib_topDown(i))
+    print(fib_topDown(i, arr))
 
 
