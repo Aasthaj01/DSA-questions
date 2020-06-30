@@ -1,7 +1,7 @@
 # Program finds the longest common subsequence out of the two input strings
 
 def long_sub_print(s1, s2, m, n, T):
-    # string = [0]*max(m+1, n+1)
+    
     
     if m==0 or n==0:
         return str()
