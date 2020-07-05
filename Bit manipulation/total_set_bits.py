@@ -34,6 +34,45 @@ def count(n):
     
 n = int(input("Enter the number: "))
 print("Number of set bits are:", count(n))
+# ---------------------------------------------------------------------------------------
+# METHOD 3 - Brian and Kerningham algorithm
+
+def count(n):
+    result = 0
+    while n>0:
+        n = n & (n-1)
+        result +=1
+    return result 
+    
+n = int(input("Enter the number: "))
+print("Number of set bits are:", count(n))
+
+# ---------------------------------------------------------------------------------------
+# METHOD 4 - Look up table -O(1) (for 32 bit number)
+
+def initialize():
+    table[0] = 0
+    for i in range(1, 256):
+        table[i] = (i&1)+table[i//2]
+        
+def count(n):
+    result = table[n&0xff]
+    n>>=8
+    result = result + table[n&0xff]
+    n>>=8
+    result = result + table[n&0xff]
+    n>>=8
+    result = result + table[n&0xff]
+    return result
+    
+table = [0]*256    
+n = int(input("Enter the number: "))
+initialize()
+print("Number of set bits are:", count(n))
+
+
+
+
 
 
 
