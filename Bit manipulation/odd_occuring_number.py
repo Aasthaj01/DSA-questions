@@ -14,7 +14,7 @@ def odd_occuring(arr, n):
             
 arr = list(map(int, input("Enter the numbers for array:").split()))
 n = len(arr)
-print("Number in the list occuring odd number of times is:", odd(arr, n))
+print("Number in the list occuring odd number of times is:", odd_occuring(arr, n))
 
 #---------------------------------------------------------------------------------------------------------------
 # METHOD 2 - using XOR - O(n)
