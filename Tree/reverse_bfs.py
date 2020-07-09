@@ -123,9 +123,8 @@ class BinaryTree(object):
     def level_order(self, start):
         if start is None:
             return 
-        q =Queue()
-        q =Queue(maxsize = 30)
         
+        q =Queue(maxsize = 30)
         q.put(start)
         traversal = ""
         while q.qsize()>0:
@@ -134,20 +133,17 @@ class BinaryTree(object):
             if node.left:
                 q.put(node.left)
             if node.right:
-               
                 q.put(node.right)
-        return traversal            
+        return traversal 
+    
     def reverse_level_order(self, start):
         if start is None:
             return
         s = deque()
         q = Queue(maxsize = 30)
-      
         q.put(start)
         traversal = ""
-        
         while q.qsize()>0:
-            
             node = q.get()
             s.append(node)
             if node.right:
