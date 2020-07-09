@@ -43,6 +43,6 @@ b.root.right = Node(3)
 b.root.left.left = Node(10)
 b.root.left.right = Node(20)
 b.root.right.left = Node(30)
-print(b.height(b.root))
+
 print(b.tree_size(b.root))
 print(b.tsize())
