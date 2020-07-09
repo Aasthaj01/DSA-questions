@@ -1,4 +1,4 @@
-# Finding maximum node in the tree
+# Finding node at kth distance from root node in the tree
 
 class Node(object):
     def __init__(self, value):
