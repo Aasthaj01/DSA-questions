@@ -14,8 +14,7 @@ def even(n):
     else:    
         for i in reversed(range(n+1)):
             if 2**i < n:
-                maxi =  max(2**i, 2**(i-1))
-                return maxi
+                return 2**i
 t = int(input("Enter number of test cases:"))
 arr = []
 for i in range(t):
@@ -24,3 +23,10 @@ for i in range(t):
     arr.append(ans)
 for i in range(len(arr)):    
     print(arr[i], end = ' ')
+#     --------------------------------------------------------------------------------------------------------------------
+
+import math
+t = int(input())
+for i in range(t):
+    n =int(input())
+    print(pow(2,int(math.log(n,2))))
