@@ -85,3 +85,75 @@ print(b.print_tree("Preorder"))
 print(b.print_tree("Inorder"))
 print(b.print_tree("postorder"))
 print(b.print_tree("levelorder"))
+#---------------------------------------------------------------------------------------------------------------------------------------------
+
+class Node(object):
+    def __init__(self, value):
+        self.value = value
+        self.right = None
+        self.left = None
+        
+def printLevelOrder(node): 
+    h = height(node) 
+    for i in range(1, h+1): 
+        printGivenLevel(node, i) 
+
+def printGivenLevel(node , level): 
+    if node is None: 
+        return
+    if level == 1: 
+        print(node.value,end=" ") 
+    elif level > 1 : 
+        printGivenLevel(node.left , level-1) 
+        printGivenLevel(node.right , level-1) 
+  
+def isBalanced(node): 
+    if node is None: 
+        return 0
+    ltree = isBalanced(node.left) 
+    if ltree == -1:
+        return -1
+    rtree = isBalanced(node.right)
+    if rtree == -1:
+        return -1
+    if abs(ltree - rtree) > 1:
+        return -1
+    else:    
+        return 1+max(ltree, rtree)
+def level_order(node):
+    if node is None: 
+        return
+    queue = [] 
+    queue.append(node)
+    while(len(queue) > 0): 
+        
+        print (queue[0].value) 
+        node = queue.pop(0) 
+ 
+        if node.left is not None: 
+            queue.append(node.left)
+        if node.right is not None: 
+            queue.append(node.right)
+  
+    
+def height(node): 
+    if node is None: 
+        return 0 
+    lheight = height(node.left) 
+    rheight = height(node.right) 
+    return 1+max(lheight, rheight)
+
+
+root = Node(1)
+root.left = Node(2)
+root.left.left = Node(2)
+root.left.left.left = Node(2)
+ans = isBalanced(root)
+if ans !=-1:
+    print("The tree is balanced and its height is:", ans)
+else:
+    print("The tree is not balanced")
+# method 2 - recursive 
+print(level_order(root)) 
+# method 3 - variation of method 1
+printLevelOrder(root)
