@@ -50,7 +50,6 @@ print(b.print_tree("Preorder"))
 print(b.print_tree("Inorder"))
 print(b.print_tree("postorder"))
 #-------------------------------------------------------------------------------------------------------------------------
-# Finding max width. Maximum Width of Binary tree is the maximum number of nodes present in a level of the Tree.
 
 class Node(object):
     def __init__(self, value):
