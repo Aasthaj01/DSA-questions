@@ -70,17 +70,17 @@ def post_order(node):
     if node is None:
         return 
     # left, right, root
-    pre_order(node.left)
-    pre_order(node.right) 
+    post_order(node.left)
+    post_order(node.right) 
     print(node.value, end = " ")
     
 def in_order(node):
     if node is None:
         return 
     # left, root, right
-    pre_order(node.left)
+    in_order(node.left)
     print(node.value, end = " ")
-    pre_order(node.right) 
+    in_order(node.right) 
     
 def level_order(node):
     if node is None: 
