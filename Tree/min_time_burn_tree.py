@@ -1,4 +1,57 @@
-We are given a binary tree and a leaf node, we need to find time to burn the Binary Tree if we burn the given leaf at 0-th second. 
+We are given a binary tree and a leaf node, we need to find time to burn the Binary Tree if we burn the given leaf at 0-th second.
+
+
+class Node:
+    def __init__(self, value):
+        self.left = None
+        self.right = None
+        self.parent = None
+        self.value = value
+
+    def set_left(self, other):
+        self.left = other
+        other.parent = self
+
+    def set_right(self, other):
+        self.right = other
+        other.parent = self
+
+def get_distance_to_furthest(node):
+    visited = set()
+    queue = [(node, 0)]
+    max_d = 0
+    while queue:
+        node, d = queue.pop(0)
+
+        if node in visited:
+            continue
+        visited.add(node)
+
+        max_d = max(d, max_d)
+
+        if node.left:
+            queue.append((node.left, d + 1))
+        if node.right:
+            queue.append((node.right, d + 1))
+        if node.parent:
+            queue.append((node.parent, d + 1))
+
+    return max_d
+
+root = Node(1)
+root.set_left(Node(1))
+root.set_right(Node(1))
+root.left.set_left(Node(1))
+root.left.set_right(Node(1))
+root.left.right.set_left(Node(1))
+root.left.right.set_right(Node(1))
+root.right.set_right(Node(1))
+root.right.right.set_right(Node(1))
+root.right.right.right.set_right(Node(1))
+print(get_distance_to_furthest(root.left.right))
+
+
+#---------------------------------------------------------------------------------------------------------------------------
 class Node(object):
     def __init__(self, value):
         self.left = None
