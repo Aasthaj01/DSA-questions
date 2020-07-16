@@ -62,3 +62,74 @@ print(inorder(r))
 
 num = int(input("Enter the number to be searched:"))
 print(bst_search(r, num))
+
+#=============================================================================================================================
+#Iterative approach where space complexity is o(1)
+#  create a binary search tree from given data
+class newNode:  
+    
+    def __init__(self, data):  
+        self.key= data  
+        self.left = None
+        self.right = self.parent = None
+
+def insert(root, key): 
+  
+    newnode = newNode(key)  
+  
+    x = root  
+    # Pointer y maintains the trailing  
+    # pointer of x  
+    y = None
+  
+    while (x != None): 
+        y = x  
+        if (key < x.key): 
+            x = x.left  
+        else: 
+            x = x.right  
+      
+    # If the root is None i.e the tree is  
+    # empty. The new node is the root node  
+    if (y == None): 
+        y = newnode  
+  
+    # If the new key is less then the leaf node key  
+    # Assign the new node to be its left child  
+    elif (key < y.key): 
+        y.left = newnode  
+  
+    # else assign the new node its  
+    # right child  
+    else: 
+        y.right = newnode  
+  
+    # Returns the pointer where the  
+    # new node is inserted  
+    return y  
+  
+def Inorder(root) : 
+  
+    if (root == None) : 
+        return
+    else:  
+        Inorder(root.left)  
+        print( root.key, end = " " ) 
+        Inorder(root.right) 
+ 
+    """  
+         50  
+          / \  
+        30   70  
+        / \  / \  
+       20 40 60 80 """
+root = None
+root = insert(root, 50)  
+insert(root, 30)  
+insert(root, 20)  
+insert(root, 40)  
+insert(root, 70)  
+insert(root, 60)  
+insert(root, 80)  
+Inorder(root)
+
