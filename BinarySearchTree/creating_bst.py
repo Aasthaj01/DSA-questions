@@ -52,9 +52,9 @@ def insertLevelOrder(arr, root, i, n):
     return root             
             
             
-arr = list(map(int, input().split()))
+arr = list(map(int, input("Enter nodes other than root node:").split()))
 n = len(arr) 
-a= int(input("Enter nodes other than root node:"))
+a= int(input("Enter root node:"))
 r = Node(a)
 for i in range(0, n):
     insert(r, Node(arr[i]))
