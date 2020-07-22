@@ -11,7 +11,7 @@ class BinaryTree(object):
         self.root = Node(root)
     def height(self, node):
         if node is None:
-            return -1
+            return 0
         else:
             ltree = self.height(node.left)
             rtree = self.height(node.right)
