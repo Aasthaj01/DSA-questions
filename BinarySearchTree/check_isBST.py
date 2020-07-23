@@ -29,4 +29,45 @@ if (isBST(root)):
     print ("Given tree is BST")
 else: 
     print("Not a BST")
+
+    
+#==========================================================================================================
+
+class Node:  
+    def __init__(self, value):  
+        self.value = value
+        self.left = None
+        self.right = None
+  
+def isBST(root, l = None, r = None):  
+    if (root == None) : 
+        return True
+  
+    if (l != None and root.value <= l.value) : 
+        return False
+ 
+    if (r != None and root.value >= r.value) : 
+        return False
+  
+    
+    return (isBST(root.left, l, root) and 
+        isBST(root.right, root, r))  
+  
+def level_order(arr, node, i, n):
+    if i<n:
+        temp  = Node(arr[i])
+        node = temp
+        node.left = level_order(arr, node.left, 2*i+1, n)
+        node.right = level_order(arr, node.right, 2*i+2, n)
+    return node
+    
+    
+arr = list(map(int, input("Enter tree nodes:").split()))
+n = len(arr)
+root = None
+root = level_order(arr, root, 0, n)
+if (isBST(root,None,None)): 
+    print("Is BST") 
+else: 
+    print("Not a BST") 
     
