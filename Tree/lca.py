@@ -8,7 +8,17 @@ class Node(object):
         self.value = value
         self.left = None
         self.right = None
-
+        
+def lca(root, v1, v2):
+    if root is None:
+        return root
+    if ((v1 < root.value) and (v2 < root.value)):
+        root = lca(root.left,v1,v2)
+    elif ((v1 > root.value) and (v2 > root.value)):
+        root = lca(root.right,v1,v2)
+    elif ((v1 < root.value) and (v2 > root.value)):
+        return root
+    return root
 
 def lowest_common_ancestor(node, n1, n2):
     if node is None:
@@ -42,12 +52,16 @@ root = construct_tree(arr, root, 0, n)
 
 t = int(input("Enter number of test cases:"))
 arr = []
+arr2 = []
 for i in range(0, t):
     n1, n2 = list(map(int, input().split()))
     ans = lowest_common_ancestor(root, n1, n2)
+    ans2 = lca(root, n1, n2)
     arr.append(ans)
+    arr2.append(ans2)
 
 print(arr)
+print(arr2)
 # -----------------------------------------------------------------------------------
 # Method 2 - Naive solution
 
