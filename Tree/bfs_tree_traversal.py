@@ -157,3 +157,41 @@ else:
 print(level_order(root)) 
 # method 3 - variation of method 1
 printLevelOrder(root)
+#==============================================================================================
+#O(n)
+class Node(object):
+    def __init__(self, val):
+        self.val = val
+        self.left = None
+        self.right = None
+class Solution:        
+    def levelOrder(self, root) :
+        ans = []
+        def traversal(level, node):
+            if node is not None:
+                if len(ans) <= level:
+                    ans.append([node.val])
+                else:
+                    ans[level].append(node.val)
+
+                traversal(level+1, node.left)
+                traversal(level+1, node.right)
+
+        traversal(0, root)
+
+        return ans
+    
+  def level_order_insert(arr, root, i, n):
+    if i<n:
+        temp = Node(arr[i])
+        root = temp 
+        root.left = level_order_insert(arr, root.left, 2*i+1, n)
+        root.right = level_order_insert(arr, root.right, 2*i+2, n)
+    return root
+
+s= Solution()
+arr = list(map(int, input().split()))
+n = len(arr)
+root = None
+root = level_order_insert(arr, root, 0, n)
+print(s.levelOrder(root))
