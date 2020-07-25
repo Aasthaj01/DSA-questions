@@ -70,4 +70,44 @@ if (isBST(root,None,None)):
     print("Is BST") 
 else: 
     print("Not a BST") 
+#=======================================================================================================
+import sys
+
+class Node(object):
+    def __init__(self, val):
+        self.right = None
+        self.left = None
+        self.val = val
+        
+def is_bst(root, prev):
+    if root is None:
+        return True
+    if is_bst(root.left, prev) == False:
+        return False
+    if root.val<= prev:
+        return False
+    prev = root.val    
+    return is_bst(root.right, prev)
     
+def level_order_insert(arr, root, i, n):
+    if i<n:
+        temp = Node(arr[i])
+        root = temp 
+        root.left = level_order_insert(arr, root.left, 2*i+1, n)
+        root.right = level_order_insert(arr, root.right, 2*i+2, n)
+    return root
+
+
+arr = list(map(int, input().split()))
+n = len(arr)
+root = None
+root = level_order_insert(arr, root, 0, n)    
+max_int = sys.maxsize    
+prev = -max_int  
+
+
+if is_bst(root, prev) == True:
+    print("Tree is bst")
+else:
+    print("No, tree is not a bst")
+
