@@ -24,7 +24,17 @@ def insert(root, node):
                 insert(root.left, node)
 
 
-
+def k_node(root, k):        
+     stack = []
+     while True:
+         while root:
+             stack.append(root)
+             root = root.left
+         root = stack.pop()
+         k -= 1
+         if not k:
+             return root.value
+         root = root.right 
 def kthSmallest(root, k):
     def inorder(curr, arr): 
         if not curr:
@@ -45,7 +55,7 @@ for i in range(0, n):
     insert(r, Node(arr[i]))
 k = int(input("Enter the element to be searched:")) 
 print(kthSmallest(r, k))
-  
+print(k_node(r, k))  
 
         
 
