@@ -41,3 +41,17 @@ arr = list(map(int, input("Enter the elements of arr:").split()))
 k = int(input("Enter the difference:"))
 ans = pair_with_diff_k(arr, k)
 print("The number of distinct pairs with difference as k are:", ans)  
+#==================================================================================================================
+
+def pair(arr, k):
+    sett = set(arr)
+    count = 0
+    for num in sett:
+        if(num+k in sett):
+            count += 1
+    return count
+    
+arr = list(map(int, input("Enter the elements of arr:").split()))
+k = int(input("Enter the difference:"))
+ans = pair(arr, k)
+print("The number of distinct pairs with difference as k are:", ans)  
