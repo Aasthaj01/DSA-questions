@@ -54,4 +54,25 @@ def pair(arr, k):
 arr = list(map(int, input("Enter the elements of arr:").split()))
 k = int(input("Enter the difference:"))
 ans = pair(arr, k)
-print("The number of distinct pairs with difference as k are:", ans)  
+print("The number of distinct pairs with difference as k are:", ans) 
+#===================================================================================================================
+
+from collections import Counter
+
+def pair(arr, k):
+    counter = Counter(arr)
+    
+    count = 0
+    for i in arr:
+        find = i-k
+        if(find in counter):
+            count+=1
+        
+    return count
+arr = [ 1, 2, 4, 8, 8, 12 ] 
+k = 3
+
+n = len(arr) 
+ans = pair(arr, k)   
+print(ans)
+    
