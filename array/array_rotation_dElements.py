@@ -29,7 +29,18 @@ for i in range(no_of_testCases):
     print("The array after rotation is:")
     array_rotation(arr, n, d)
     print()
-    
-    
+#======================================================================
+#O(k)
+
+def rotate_right(nums, k):
+    for i in range(k):
+        nums.insert(0, nums.pop(len(nums) - 1))
+    return nums    
+nums = list(map(int, input().split()))
+n = len(nums)
+k = int(input())
+ans = rotate_right(nums, k)
+print(nums)
+
      
 
