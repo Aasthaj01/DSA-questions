@@ -1,6 +1,7 @@
 # A left rotation operation on an array of size n shifts each of the array's elements 1 unit to the left. 
 #Given an array of n integers and a number, d, perform d left rotations on the array. Then print the updated array as a single line of space-separated integers.
 
+#Time complexity of slicingO(n + d)
 nd = input().split()
 
 n = int(nd[0])
@@ -11,7 +12,7 @@ a = list(map(int, input().rstrip().split()))
 for value in (a[d:] + a[0:d]): 
     print(value, end = " ")
 #========================================================================================================
-#recursive solution
+#recursive solution-  O(nd)
 def left_rotate_d(a, n, d):
     
     for i in range(d):
