@@ -8,9 +8,11 @@ n = int(nd[0])
 
 d = int(nd[1])
 
-a = list(map(int, input().rstrip().split()))
-for value in (a[d:] + a[0:d]): 
-    print(value, end = " ")
+A = list(map(int, input().rstrip().split()))
+for value in (A[d:] + A[0:d]): 
+    A.append(value)
+del A[:n]
+return A 
 #========================================================================================================
 #recursive solution-  O(nd)
 def left_rotate_d(a, n, d):
