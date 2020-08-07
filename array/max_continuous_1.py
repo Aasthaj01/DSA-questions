@@ -18,6 +18,6 @@ def max_cons_1(arr, n):
             count = 0
     return res            
            
-arr= list(map(int, input("Enter the heights:").split()))
+arr= list(map(int, input("Enter the numbers:").split()))
 n = len(arr)
 print(max_cons_1(arr, n))
