@@ -1,4 +1,5 @@
 # max sum of continuous subarray     
+#Kadane algorithm
 
 def max_sum_subarray(arr, n):
     res = arr[0]
