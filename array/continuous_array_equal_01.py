@@ -12,7 +12,7 @@ def findMaxLength(nums, n):
     if len(nums)==2:
         if nums[0]==nums[1]:
             return 0
-        # return 2
+        return 2
 
     if nums.count(1)==nums.count(0):
         return len(nums)
