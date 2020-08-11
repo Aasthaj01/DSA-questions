@@ -4,7 +4,7 @@
 # Input: [0,1]
 # Output: 2
 # Explanation: [0, 1] is the longest contiguous subarray with equal number of 0 and 1.
-
+# Using dictionary we are soring count:index values 
 
 def findMaxLength(nums, n):
     if not nums or len(nums)==1:
