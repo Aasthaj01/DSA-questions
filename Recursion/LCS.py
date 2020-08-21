@@ -15,7 +15,7 @@ def long_sub_print(s1, s2, m, n, T):
     else:
         return long_sub_print(s1, s2, m, n-1, T)
         
-def longest_sub(s1, s2, m, n, ):
+def longest_sub(s1, s2, m, n):
     
     
     if m==0 or n==0:
