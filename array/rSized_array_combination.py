@@ -25,3 +25,13 @@ arr = list(map(int, input("Enter the array elements: ").split()))
 n = len(arr)
 r = int(input("Enter the length of subarray you want: "))
 print_combinations(arr, n ,r)
+#===========================================================
+# using library
+from itertools import combinations 
+arr = list(map(int, input("Enter the array elements: ").split()))
+n = len(arr)
+r = int(input("Enter the length of subarray you want: "))
+comb = combinations(arr, r) 
+for i in list(comb): 
+    print i
+    
