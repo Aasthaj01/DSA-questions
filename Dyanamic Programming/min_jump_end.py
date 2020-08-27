@@ -36,6 +36,7 @@ def min_jump_end(arr, n):
             if (arr[j]+j)>=i:
                 if dp[j]!=sys.maxsize:
                     dp[i] = min(dp[i], dp[j]+1 )
+                    break
     return dp[n-1]                
                 
     
