@@ -20,3 +20,26 @@ arr = list(map(int, input().split()))
 n = len(arr)
 print(min_jump_end(arr, n))
 #=================================================================================================
+#BOTTOM UP SOLUTION 
+import sys
+
+def min_jump_end(arr, n):
+
+    dp = [0]*n
+    dp[0] = 0
+    if (n == 0) or (arr[0] == 0):
+        return sys.maxsize
+        
+    for i in range(1, n):
+        dp[i] =sys.maxsize
+        for j in range(0, i):
+            if (arr[j]+j)>=i:
+                if dp[j]!=sys.maxsize:
+                    dp[i] = min(dp[i], dp[j]+1 )
+    return dp[n-1]                
+                
+    
+    
+arr = list(map(int, input().split()))
+n = len(arr)
+print(min_jump_end(arr, n))
