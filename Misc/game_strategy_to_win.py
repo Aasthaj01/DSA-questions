@@ -10,8 +10,10 @@ def optimal_strategy(arr, n):
         sumo+= arr[i] 
     if sume>sumo:
         return "pick even"
-    if sume<sumo:
-        return "pick odd"           
+    elif sume<sumo:
+        return "pick odd"
+    elif sume == sumo:
+        return "tie"
     # return max(sume, sumo)    
 
 arr = list(map(int, input().split()))
