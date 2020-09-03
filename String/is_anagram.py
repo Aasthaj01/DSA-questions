@@ -14,3 +14,14 @@ if ans == res:
 else:
     print("Not same")
     
+#=======================================================
+# method 2
+
+s1 = str(input())
+s2 = str(input())
+if sorted(s1) == sorted(s2):
+    print("Same")
+else:
+    print("Not same")
+    
+    
