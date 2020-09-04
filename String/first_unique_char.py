@@ -13,3 +13,14 @@ def check_left_non_repeating(str1):
                 
 str1 = str(input())                
 print(check_left_non_repeating(str1))
+#=========================================================================
+# first unique character in string is one which occured only once in the string
+
+def check_left_non_repeating(str1):
+    try:
+        return str1.index([x for x in list(dict.fromkeys(list(str1))) if str1.count(x) == 1][0])
+    except:
+        return -1
+                
+str1 = str(input())                
+print(check_left_non_repeating(str1))
