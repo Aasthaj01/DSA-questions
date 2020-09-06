@@ -32,7 +32,7 @@ class LinkedList:
         prev_node = self.head
         if position == 0:
             new_node = Node(data)
-            new_node.next = head
+            new_node.next = self.head
             return new_node
 
         while prev_node is not None:
