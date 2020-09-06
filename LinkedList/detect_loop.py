@@ -87,45 +87,8 @@ class LinkedList:
             slow = slow.next
             fast = fast.next.next
             if slow == fast: 
-                self.removeLoop(slow) 
-          
-                # Return 1 to indicate that loop is found 
-                return 1
-          
-        # Return 0 to indicate that there is no loop 
-        return 0 
-
-    def removeLoop(self, loop_node): 
-        ptr1 = loop_node 
-        ptr2 = loop_node 
-          
-        # Count the number of nodes in loop 
-        k = 1 
-        while(ptr1.next != ptr2): 
-            ptr1 = ptr1.next
-            k += 1
-  
-        # Fix one pointer to head 
-        ptr1 = self.head 
-        # And the other pointer to k nodes after head 
-        ptr2 = self.head 
-        for i in range(k): 
-            ptr2 = ptr2.next
-  
-        # Move both pointers at the same place 
-        # they will meet at loop starting node 
-        while(ptr2 != ptr1): 
-            ptr1 = ptr1.next
-            ptr2 = ptr2.next
-  
-        # Get pointer to the last node 
-        while(ptr2.next != ptr1): 
-            ptr2 = ptr2.next
-  
-        # Set the next node of the loop ending node 
-        # to fix the loop 
-        ptr2.next = None  
-            
+                return True
+        return False
             
 llist = LinkedList()
 arr = list(map(int, input("Enter the number you want in your linked list:").split()))
