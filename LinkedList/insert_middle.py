@@ -51,3 +51,60 @@ mid = len(arr)//2
 llist.insert_at_pos(num, mid)    
 llist.delete_node_at_pos(d)
 llist.print_ll()
+#===================================================================
+#method 2 - using fast pointers
+class Node : 
+    def __init__(self, data): 
+        self.data = data  
+        self.next = None
+          
+class LinkedList:  
+    def __init__(self): 
+        self.head = None
+     
+    def insert_beginning(self, new_data):  
+        new_node = Node(new_data)  
+        new_node.next = self.head  
+        self.head = new_node  
+          
+    def insertAtMid(self, x):
+        if (self.head == None):  
+            self.head = Node(x)  
+  
+        else:  
+         
+            newNode = Node(x)    
+            slow = self.head 
+            fast = self.head.next
+  
+            while (fast != None and 
+                   fast.next != None):  
+                  
+                # move slow pointer to next node, move fast pointer two nodes  
+                # at a time  
+                slow = slow.next 
+                fast = fast.next.next
+  
+            # insert the 'newNode' and  
+            # adjust the required links  
+            newNode.next = slow.next
+            slow.next = newNode 
+  
+    
+    def display(self): 
+        curr_node = self.head  
+        while (curr_node != None):  
+            print(curr_node.data, end = "-->"), 
+            curr_node = curr_node.next
+
+ll = LinkedList() 
+ll.insert_beginning(5)
+ll.insert_beginning(4)
+ll.insert_beginning(3)
+print("Linked list before insertion: ")
+ll.display()  
+x = int(input("Enter the number which you want to insert:"))
+ll.insertAtMid(x) 
+print("\nLinked list after insertion: ")
+ll.display() 
+
