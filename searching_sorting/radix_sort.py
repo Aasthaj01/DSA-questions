@@ -1,7 +1,8 @@
 def countingSort(arr, exp1): 
     n = len(arr)  
     output = [0] * (n)
-    count = [0] * (100) 
+    # To count the occurence of digits from 0 to 9 
+    count = [0] * (10) 
    
     for i in range(0, n): 
         index = (arr[i]/exp1) 
