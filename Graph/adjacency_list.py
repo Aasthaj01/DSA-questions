@@ -34,3 +34,16 @@ graph.add_edge(0, 2)
 graph.add_edge(0, 3)
 graph.add_edge(1, 2)
 graph.print_agraph()
+#=============================================================================================
+# Using external library
+
+from collections import defaultdict
+
+graph = defaultdict(list)
+v, e = map(int, input().split())
+for i in range(e):
+    u, v = map(str, input().split())
+    graph[u].append(v)
+    graph[v].append(u)
+for v in graph:
+    print(v, graph[v])
