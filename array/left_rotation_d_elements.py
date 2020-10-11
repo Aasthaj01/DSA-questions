@@ -12,7 +12,7 @@ A = list(map(int, input().rstrip().split()))
 for value in (A[d:] + A[0:d]): 
     A.append(value)
 del A[:n]
-return A 
+print(A)
 #========================================================================================================
 #recursive solution-  O(nd)
 def left_rotate_d(a, n, d):
