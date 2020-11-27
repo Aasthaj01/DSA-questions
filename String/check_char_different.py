@@ -1,7 +1,7 @@
 # Find and print the uncommon characters of the two given strings in sorted order.
 #Input: str1 = “characters”, str2 = “alphabets”
 #Output: b c l p r
-
+# Naive approach would be to O(n^2)
 MAX_CHAR = 26
 
 def findAndPrintUncommonChars(str1, str2): 
@@ -30,4 +30,6 @@ def findAndPrintUncommonChars(str1, str2):
 str1 = str(input())
 str2 = str(input())
 findAndPrintUncommonChars(str1, str2) 
+
+# O(m+n)
   
