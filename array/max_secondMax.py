@@ -21,3 +21,24 @@ n = len(arr)
 ans = largestAndSecondLargest(n, arr)
 for i in range(len(ans)):
     print(ans[i], end = " ")
+#====================================================================================================================
+
+arr = [7, 2, 4, 10, 18]
+n = len(arr)
+
+maxnum = max(arr[0], arr[1])
+minnum = min(arr[0], arr[1])
+for i in range(2, n):
+    if arr[i]>=maxnum:
+        minnum = maxnum
+        maxnum = arr[i]
+    elif arr[i]>minnum or maxnum!= arr[i]:
+        minnum = arr[i]
+print(maxnum, minnum)
+
+#=========================================================================================================================
+arr = [7, 2, 4, 10, 18, 18]
+listt = set(arr)
+print(max(listt))
+listt.remove(max(listt))
+print(max(listt))
