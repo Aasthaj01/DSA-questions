@@ -38,17 +38,4 @@ def insertion_sort(arr):
 arr = list(map(int, input().split()))
 print(insertion_sort(arr))
             
-#==================================================================
-def insertion_sort(arr):
-    n = len(arr)
-    
-    for i in range(1, n):
-        values_to_sort = arr[i]
-        while arr[i-1]>values_to_sort and i>0:
-            arr[i], arr[i-1]=arr[i-1], arr[i]
-            i-=1
-            
-    return arr
 
-arr = list(map(int, input().split()))   
-print(insertion_sort(arr))
